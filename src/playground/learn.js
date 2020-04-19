@@ -67,3 +67,32 @@ let keys = Array.from(map.keys());
 keys.push("more");
 
 console.log(keys);
+
+// expense total
+
+const expenses = [
+    {
+        id: '1',
+        description: 'cola',
+        amount: 23
+    },
+    {
+        id: '2',
+        description: 'water',
+        amount: 30
+    },
+    {
+        id: '3',
+        description: 'melon',
+        amount: 40
+    }
+];
+
+const selectExpensesTotal = (expenses) => {
+    return expenses.map((expense) => expense.amount.valueOf()).reduce(function(previousValue, currentValue) {
+        return previousValue + currentValue;
+      });
+};
+
+const total = selectExpensesTotal(expenses);
+console.log(total);
